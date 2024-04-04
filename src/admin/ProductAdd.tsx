@@ -1,5 +1,5 @@
 import { Product } from '~/common/Product'
-import { SubmitHandler, useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { joiResolver } from '@hookform/resolvers/joi'
 import schemaProduct from '~/validation/product'
 
@@ -15,7 +15,7 @@ const ProductAdd = ({ onAdd }: Props) => {
     resolver: joiResolver(schemaProduct)
   })
 
-  const onSubmit: SubmitHandler<Product> = (data: Product) => {
+  const onSubmit = (data: Product) => {
     onAdd(data)
   }
   return (
